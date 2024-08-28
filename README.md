@@ -1,1 +1,5 @@
 # SENTRY
+### Repository containing all code and relevant developments from Kryptowire Labs regarding the SENTRY project.
+
+![image](https://github.com/user-attachments/assets/e37a6442-42ca-4d47-b247-c4e4d70fa263)
+Figure 1: The VPN path and link characteristics can be discovered using a client-assisted single-side probing tool called LinkWidth from a SENTRY Path Prober node. A challenge for unassisted probing strategies is to identify the VPN entry node. SENTRY solves this problem using the existing static analysis shown in Figure 1. We can determine which VPN path was taken by perturbing forwarder node link capacities in real-time. In addition, we can also measure tiny traffic fluctuations available bandwidth of routers and firewalls/vpns participating in end-to-end encrypted communications between participating routers and end-points. The use of the SENTRY client application on top of the VPN to generate traffic patterns allows us to discover the routing path and any changes in routing to a SENTRY controlled destination server.
