@@ -17,7 +17,10 @@ Throughput measurement is a slight modification of the capacity measurement tech
 **bk = (m ∗ L) / (tm − first )**
 
 where tm is the time when the mth reply is correctly received. LinkWidth reports the measurement as Available Bandwidth Estimate (BWE). In some networks, we observed that TCP SYN packets might be filtered or rate-limited. To obtain measurements, we replaced the head and tail TCP SYN packets with ICMP ECHO packets. The load packets continue to be TCP RST packets. The correct reception of the packet train is indicated by the reception of ICMP ECHO REPLY packets at the sender. The arrangement of packets is shown in Figure 5. A similar modification is used for measuring throughput: the receiver waits to see how many ICMP ECHO REPLY response packets it receives before estimating the throughput. The corresponding packet arrangement is shown in Figure 2.
+
+
 ![image](https://github.com/user-attachments/assets/d6a6bcf6-ef8c-4ec8-ae60-7f26c2151ae5)
 Figure 1: Arrangement of packets in LinkWidth for Measurement of Capacity. Figure 2: Arrangement of packet in LinkWidth for Measurement of Through- put.
+
 
 **LinkWidth Implementation**: We implemented a prototype of LinkWidth for GNU/Linux. To avoid incurring packet delays due to kernel resource scheduling, we bypassed the regular protocol stack, and we crafted our own TCP and ICMP packets using the Raw Socket API. The coarse timeout is implemented using the standard POSIX API function setitimer(). The expiration of the timer is indicated by raising a SIGALRM signal.
